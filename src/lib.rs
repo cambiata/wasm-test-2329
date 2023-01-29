@@ -24,9 +24,19 @@ pub fn test() -> Result<(), JsValue> {
     let document = window.document().expect("should have a document on window");
     let body = document.body().expect("document should have a body");
     let val = document.create_element("h1")?;
-    val.set_inner_html("Test");
+    val.set_inner_html("Test wasm-bindgen");
     body.append_child(&val)?;
     Ok(())
-    
+}
+
+
+#[wasm_bindgen]
+extern "C" {
+    fn alert(s: &str);
+}
+
+#[wasm_bindgen]
+pub fn greet(name: &str) {
+    alert(&format!("Hello, {}!", name));
 }
 

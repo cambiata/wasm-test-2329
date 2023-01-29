@@ -4,11 +4,13 @@
   </head>
   <body>
     <script type="module">
-      import init, { add, test } from './pkg/wasm_test_2329.js';
+      import init, { add, test,greet } from './pkg/wasm_test_2329.js';
       async function run() {
         await init();
         console.log(add(1, 2));
         test();
+        greet('World');
+
       }
       run();
     </script>
