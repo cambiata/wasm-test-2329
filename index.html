@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+  </head>
+  <body>
+    <script type="module">
+      import init, { add, test } from './pkg/wasm_test_2329.js';
+      async function run() {
+        await init();
+        console.log(add(1, 2));
+        test();
+      }
+      run();
+    </script>
+  </body>
+</html>
